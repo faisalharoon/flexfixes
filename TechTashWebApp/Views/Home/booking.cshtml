@@ -1,0 +1,127 @@
+@{
+    ViewBag.Title = "Booking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+@section MetaTitleTags
+{
+    <title>Home - Flex Fixes</title>
+    <meta name='keywords' content="gas cooker repair, electric repair, washing machine, washing machine repair, fridge repair service, fridge maintenance, maintenance, home appliances, home appliances repair, home appliance repair services, home appliances maintenance services, electric and gas cooker repair service, all types of maintenance & repair, home appliance repair in dubai, treadmill repair, treadmill repair near me, treadmill belt, treadmill service, treadmill cheap service, treadmill repair in dubai, dryer repair, dryer repair in dubai, gym installation, multi gym repair, treadmill repair shop near me, dish washer repair, dish washer, treadmill installation, treadmill technician near me, treadmill maintenance near me, treadmill repair and service, treadmill board repair, nordick track treadmill repair, lg washing machine repair, Samsung washing machine repair, treadmill oil, running machine repair near me, running machine repair, kitchen equipments repairing" />
+    <meta name='description' content="We are the team of the best Home appliances and Gym equipment Technicians in town. we are highly dedicated to providing the best and affordable services at your doorstep." />
+    <meta name="facebook-domain-verification" content="cwp9kia1z49irk4gt6w5xkoh95qj26" />
+}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+   <style>
+       
+        .btn-info
+        {
+            height: 100px;
+            width: 300px;
+            margin-left:10px ;
+            margin-bottom: 20px !important;
+            padding-top: 40px;
+            font-size: large;
+            color: black;
+        }
+        .badgebox
+        {
+            opacity: 0;
+        }
+
+        .badgebox + .badge
+        {
+            text-indent: -999999px;
+            width: 30px;            
+        }
+         
+        .badgebox:focus + .badge
+        {
+    
+            box-shadow: inset 0px 0px 5px;
+        }
+
+        .badgebox:checked + .badge
+        {
+            text-indent: 0;
+            background-color: greenyellow;
+        }
+        .maincont 
+        {
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        box-shadow: 0 0 10px grey;
+        padding:0 15px 0 15px;
+        }
+    </style>
+    <div class="container maincont text-center">
+
+        <form action="" method="POST"> 
+                <h1 style="   margin-bottom: 50px; text-align: center;">Select Your Equipment</h1>
+                <div class="checkbox">
+                        <h1 style="  margin-top: 50px; margin-bottom: 50px; text-align: center;">Home Appliances</h1>
+                        <div class="row">
+                            <label  class="btn btn-info"><input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Washing Machine </label>
+                            <label  class="btn btn-info"><input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Dryer </label>
+                            <label  class="btn btn-info"><input type="checkbox"class="badgebox"><span class="badge">&check;</span> Dish Washer </label>
+                        </div>
+                        <div class="row ">
+                            <label  class="btn btn-info"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Fridge</label>
+                            <label  class="btn btn-info"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Stove</label>
+                            <label  class="btn btn-info"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Oven</label>
+                        </div>
+                        <h1 style="   margin-bottom: 50px; text-align: center;">Gym Equipment</h1>
+                        <div class="row">
+                            <label  class="btn btn-info"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Treadmill</label>
+                            <label  class="btn btn-info"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Elliptical</label>
+                            <label  class="btn btn-info"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Exercise Bike</label>
+                        </div>
+                        <div class="row ">
+                            <label  class="btn btn-info"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Multi gym</label>
+                            <label  class="btn btn-info"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Rower</label>
+                            <label  class="btn btn-info"> <input type="checkbox"  class="badgebox"><span class="badge">&check;</span> Equipment Service</label>
+                        </div> 
+                
+                </div>
+                <h1 style="   margin-bottom: 50px; text-align: center;">Drop Your Details</h1>
+                <div class="row" style="margin-right: 90px; margin-left: 90px;">
+                    <div class="form-group col-md-8">
+                            <input type="text" class="form-control"  placeholder="Name">
+                    </div>       
+                    <div class="form-group col-md-4">
+
+                            <input type="tel" class="form-control"  placeholder="Mobile">
+                    </div>
+                </div>
+                <div class="row" style="margin-right: 90px; margin-left: 90px;">
+                    <div class="form-group col-md-6">
+                            <input type="email" class="form-control"  placeholder="Email">
+                    </div>       
+                    <div class="form-group col-md-3">
+
+                            <input type="time" class="form-control"  placeholder="Time">
+                    </div>
+                    <div class="form-group col-md-3">
+
+                            <input type="date" class="form-control"  placeholder="Date">
+                    </div>
+                </div>
+                <div class="row" style="margin-right: 90px; margin-left: 90px;">
+
+                        <div class="form-group col-md-12">
+
+                            <input type="text" class="form-control"  placeholder="Location">
+                        </div>
+                </div>
+                <div class="row" style="margin-right: 90px; margin-left: 90px;">
+                    <div class="form-group ">
+                    <textarea  rows="4"style="width:930px" placeholder="Complaints"></textarea>
+                    </div>
+                </div>    
+            <button type="submit" class="btn btn-primary " style="width: 250px;height:50px;margin-bottom:10px;">Send</button>
+        </form>
+    </div>

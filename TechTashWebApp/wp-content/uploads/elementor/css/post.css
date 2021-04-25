@@ -1,0 +1,128 @@
+
+.elementor-83 .elementor-element.elementor-element-client > .elementor-element-populated {    
+    background-position: center center;
+    background-size: 150px 100px;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin: 0px 0px 0px 020px;
+    background-repeat: no-repeat;
+}
+
+
+.elementor-83 .elementor-element.elementor-element-client1 > .elementor-element-populated {
+    background-image: url("http://techtash.co/img/clients/client-1.png");
+    background-position: center center;
+    background-size: auto;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin: 0px 0px 0px 020px;
+    background-repeat: no-repeat;
+}
+
+.elementor-83 .elementor-element.elementor-element-client1:hover > .elementor-element-populated {
+    background-image: url("http://techtash.co/img/clients/client-1.png");
+    background-position: center center;
+    background-size: auto;
+    background-repeat:no-repeat;
+}
+
+
+.elementor-83 .elementor-element.elementor-element-client2 > .elementor-element-populated {
+    background-image: url("http://techtash.co/img/clients/client-2.png");
+    background-position: center center;
+    background-size: auto;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin: 0px 0px 0px 020px;
+    background-repeat: no-repeat;
+}
+
+.elementor-83 .elementor-element.elementor-element-client2:hover > .elementor-element-populated {
+    background-image: url("http://techtash.co/img/clients/client-2.png");
+    background-position: center center;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+
+.elementor-83 .elementor-element.elementor-element-client3 > .elementor-element-populated {
+    background-image: url("http://techtash.co/img/clients/client-3.png");
+    background-position: center center;
+    background-size: auto;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin: 0px 0px 0px 020px;
+    background-repeat: no-repeat;
+}
+
+.elementor-83 .elementor-element.elementor-element-client3:hover > .elementor-element-populated {
+    background-image: url("http://techtash.co/img/clients/client-3.png");
+    background-position: center center;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+
+.elementor-83 .elementor-element.elementor-element-client4 > .elementor-element-populated {
+    background-image: url("http://techtash.co/img/clients/client-4.png");
+    background-position: center center;
+    background-size: auto;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin: 0px 0px 0px 020px;
+    background-repeat: no-repeat;
+}
+
+.elementor-83 .elementor-element.elementor-element-client4:hover > .elementor-element-populated {
+    background-image: url("http://techtash.co/img/clients/client-4.png");
+    background-position: center center;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.elementor-83 .elementor-element.elementor-element-client > .elementor-element-populated > .elementor-background-overlay {
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.elementor-83 .elementor-element.elementor-element-client .elementor-spacer-inner {
+    height: 50px;
+}
+
+.elementor-83 .elementor-element.elementor-element-client {
+    text-align: center;
+}
+
+    .elementor-83 .elementor-element.elementor-element-client.elementor-widget-heading .elementor-heading-title {
+        color: #ffffff;
+    }
+
+    .elementor-83 .elementor-element.elementor-element-client .elementor-heading-title {
+        font-family: "Exo", Sans-serif;
+        font-size: 37px;
+    }
