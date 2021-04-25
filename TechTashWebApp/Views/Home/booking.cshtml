@@ -64,42 +64,42 @@
     </style>
     <div class="container maincont ">
 
-        <form action="" method="POST"> 
+        <form action="" method="POST" id="frmbooking"> 
                 <h3 style="   margin-bottom: 10px; text-align: center;font-weight:bold">Select Your Equipment </h3>
                 <h3 style="  margin-top: 10px; margin-bottom: 15px; text-align: center; ">Home Appliances & Gym Equipment</h3>
 
                 <div class="checkbox ">
                         <div class="row " style="margin-bottom: 0px !important;">
                             <label  class="btn btn-info  col-xs-11 col-sm-3 col-md-2 col-lg-3 center-block" style="padding-top: 17px;			padding-right:280px !important;">
-							<input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Washing Machine </label>
+							<input type="checkbox"   class="badgebox" name="washingmachine"><span class="badge">&check;</span> Washing Machine </label>
                             <label  class="btn btn-info col-xs-11 col-sm-3 col-md-2 col-lg-3 center-block"style="padding-top: 17px;			padding-right:280px !important;">
-							<input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Dryer </label>
+							<input type="checkbox"   class="badgebox" name="dryer"><span class="badge">&check;</span> Dryer </label>
                             <label  class="btn btn-info col-xs-11 col-sm-3 col-md-2 col-lg-3 center-block"style="padding-top: 17px;			padding-right:280px !important;">
-							<input type="checkbox"class="badgebox"><span class="badge">&check;</span> Dish Washer </label>
+							<input type="checkbox"class="badgebox" name="dishwasher"><span class="badge">&check;</span> Dish Washer </label>
                         </div>
                         <div class="row " style="margin-bottom: 0px !important;">
                             <label  class="btn btn-info col-xs-11 col-sm-3 col-md-2 col-lg-3 center-block"style="padding-top: 17px;			padding-right:280px !important;
-"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Fridge</label>
+"> <input type="checkbox"   class="badgebox"  name="fridge"><span class="badge">&check;</span> Fridge</label>
                             <label  class="btn btn-info col-xs-11 col-sm-3 col-md-2 col-lg-3 center-block"style="padding-top: 17px;			padding-right:280px !important;
-"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Stove</label>
+"> <input type="checkbox"   class="badgebox" name="stove"><span class="badge">&check;</span> Stove</label>
                             <label  class="btn btn-info col-xs-11 col-sm-3 col-md-2 col-lg-3 center-block"style="padding-top: 17px;			padding-right:280px !important;
-"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Oven</label>
+"> <input type="checkbox"   class="badgebox" name="oven"><span class="badge">&check;</span> Oven</label>
                         </div>
                         <div class="row" style="margin-bottom: 0px !important;">
                             <label  class="btn btn-info col-xs-11 col-sm-3 col-md-2 col-lg-3 center-block"style="padding-top: 17px;			padding-right:280px !important;
-"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Treadmill</label>
+"> <input type="checkbox"   class="badgebox" name="treadmill"><span class="badge">&check;</span> Treadmill</label>
                             <label  class="btn btn-info col-xs-11 col-sm-3 col-md-2 col-lg-3 center-block"style="padding-top: 17px;			padding-right:280px !important;
-"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Elliptical</label>
+"> <input type="checkbox"   class="badgebox" name="elliptical"><span class="badge">&check;</span> Elliptical</label>
                             <label  class="btn btn-info col-xs-11 col-sm-3 col-md-2 col-lg-3 center-block"style="padding-top: 17px;			padding-right:280px !important;
-"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Exercise Bike</label>
+"> <input type="checkbox"   class="badgebox" name="exercisebike"><span class="badge">&check;</span> Exercise Bike</label>
                         </div>
                         <div class="row " style="margin-bottom: 0px !important;">
                             <label  class="btn btn-info  col-xs-11 col-sm-3 col-md-2 col-lg-3 center-block"style="padding-top: 17px;			padding-right:280px !important;
-"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Multi gym</label>
+"> <input type="checkbox"   class="badgebox" name="multigym"><span class="badge">&check;</span> Multi gym</label>
                             <label  class="btn btn-info  col-xs-11 col-sm-3 col-md-2 col-lg-3 center-block"style="padding-top: 17px;			padding-right:280px !important;
-"> <input type="checkbox"   class="badgebox"><span class="badge">&check;</span> Rower</label>
+"> <input type="checkbox"   class="badgebox" name="rower"><span class="badge">&check;</span> Rower</label>
                             <label  class="btn btn-info  col-xs-11 col-sm-3 col-md-2 col-lg-3 center-block"style="padding-top: 17px;			padding-right:280px !important;
-"> <input type="checkbox"  class="badgebox"><span class="badge">&check;</span> Equipment Service</label>
+"> <input type="checkbox"  class="badgebox" name="equipment"><span class="badge">&check;</span> Equipment Service</label>
                         </div> 
                 
                 </div>
@@ -108,38 +108,73 @@
                 <div class="row " style="   margin-bottom: 0px !important;">
                     
                 <div class="form-group  col-xs-11 col-sm-8 col-lg-8 center-block">
-                            <input type="text" class="form-control"  placeholder="Name">
+                            <input type="text" class="form-control"  placeholder="Name" name="txtname">
                     </div>       
                     <div class="form-group  col-xs-11 col-sm-4 col-lg-4 center-block ">
 
-                            <input type="tel" class="form-control"  placeholder="Mobile">
+                            <input type="tel" class="form-control"  placeholder="Mobile" name="txtmobile">
                     </div>
                 </div>
                 <div class="row" style="margin-bottom: 0px !important; " >
                     <div class="form-group  col-xs-11 col-sm-6 col-lg-6 center-block">
-                            <input type="email" class="form-control"  placeholder="Email">
+                            <input type="email" class="form-control"  placeholder="Email" name="txtemail">
                     </div>       
                     <div class="form-group  col-xs-11 col-sm-3 col-lg-3 center-block">
 
-                            <input type="time" class="form-control"  placeholder="Time">
+                            <input type="time" class="form-control"  placeholder="Time" name="txttime">
                     </div>
                     <div class="form-group col-xs-11 col-sm-3 col-lg-3 center-block">
 
-                            <input type="date" class="form-control"  placeholder="Date">
+                            <input type="date" class="form-control"  placeholder="Date" name="txtdate">
                     </div>
                 </div>
                 <div class="row" style="margin-bottom: 0px !important;">
 
                         <div class="form-group  col-xs-11 col-sm-12 col-lg-12 center-block">
 
-                            <input type="text" class="form-control"  placeholder="Location">
+                            <input type="text" class="form-control"  placeholder="Location" name="txtlocation">
                         </div>
                 </div>
                 <div class="row" style="margin-bottom: 0px !important;">
                     <div class="form-group col-xs-11 col-sm-12 col-lg-12 center-block">
-                    <textarea  rows="3" style="width: 100%;" placeholder="Complaints"></textarea>
+                    <textarea  rows="3" style="width: 100%;" placeholder="Complaints" name="txtcomplaints"></textarea>
                     </div>
                 </div> 
-            <button type="submit" class="btn btn-primary " style="width: 250px;height:50px;margin-bottom:10px;margin-left:20px" id="btnsendbookingemail">Send</button>
+            <input type="button" class="btn btn-primary " style="width: 250px;height:50px;margin-bottom:10px;margin-left:20px" id="btnsendbookingemail" data-sending-label="Sending..." value="Send" />
         </form>
     </div>
+
+
+
+<script>
+
+    var jqcontact = $.noConflict();
+    jqcontact('#btnsendbookingemail').click(function () {
+        //if (jqcontact('#avia_8_1').val() == 3)
+            saveContactus2();
+        //else
+            //alert('please provide valid captcha.');
+    });
+
+    function saveContactus2() {
+        var str = jqcontact('#frmbooking').serialize();
+        //alert(str);
+
+        jqcontact.ajax({
+            type: "POST",
+            url: "/Home/SendBookingEmail",
+            //data: {'str':str},
+            data: str,
+            success: function (msg) {
+                //alert(msg);
+                if (msg == '1') {
+                    alert('Query sent successfully');
+                } else {
+                    alert(msg);
+                }
+
+            }
+        });
+    }
+</script>
+

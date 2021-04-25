@@ -136,7 +136,11 @@ namespace TechTashWebApp.Controllers
 
 
 
-
+        [HttpPost]
+        public string SendBookingEmail(string str)
+        {
+            return sendbookingemail();
+        }
 
 
 
@@ -231,6 +235,99 @@ namespace TechTashWebApp.Controllers
                 message.From = fromAddress;
                 message.To.Add("info@flexfixes.com");
                 message.Subject = "Flex Fixes Query Email from Website";
+                message.IsBodyHtml = true;
+                message.Body = Message;
+                smtpClient.Host = "relay-hosting.secureserver.net";   //-- Donot change.
+                smtpClient.Port = 25; //--- Donot change
+                smtpClient.EnableSsl = false;//--- Donot change
+                smtpClient.UseDefaultCredentials = true;
+                smtpClient.Credentials = new System.Net.NetworkCredential("info@flexfixes.com", "usman83213");
+
+                smtpClient.Send(message);
+                msg = "1";
+                //lblConfirmationMessage.Text = "Your email successfully sent.";
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+            return msg;
+        }
+
+
+
+        public string sendbookingemail()
+        {
+            var Message = "";
+
+            var txtName = Convert.ToString(Request.Form["txtname"]);
+            var txtmobile = Convert.ToString(Request.Form["txtmobile"]);
+            var txtemail = Convert.ToString(Request.Form["txtemail"]);
+            var txttime= Convert.ToString(Request.Form["txttime"]);
+            var txtdate = Convert.ToString(Request.Form["txtdate"]);
+            var txtlocation = Convert.ToString(Request.Form["txtlocation"]);
+           
+            var txtcomplaints = Convert.ToString(Request.Form["txtcomplaints"]);
+
+
+
+            var washingmachine = Convert.ToString(Request.Form["washingmachine"]);
+            var dryer = Convert.ToString(Request.Form["dryer"]);
+            var dishwasher = Convert.ToString(Request.Form["dishwasher"]);
+            var fridge = Convert.ToString(Request.Form["fridge"]);
+            var stove = Convert.ToString(Request.Form["stove"]);
+            var oven = Convert.ToString(Request.Form["oven"]);
+            var treadmill= Convert.ToString(Request.Form["treadmill"]);
+            var elliptical = Convert.ToString(Request.Form["elliptical"]);
+            var exercisebik = Convert.ToString(Request.Form["exercisebike"]);
+            var multigym = Convert.ToString(Request.Form["multigym"]);
+            var rower = Convert.ToString(Request.Form["rower"]);
+            var equipment = Convert.ToString(Request.Form["equipment"]);
+
+            var selectedequipment = "";
+            if(Convert.ToString(washingmachine)=="on") selectedequipment = string.Format("<b>{0}</b>,", "Washing Machine");
+            if (Convert.ToString(dryer) == "on")         selectedequipment += string.Format("<b>{0}</b>,", "Dryer");
+            if (Convert.ToString(dishwasher) == "on")
+                selectedequipment += string.Format("<b>{0}</b>,", "Dish Washer");
+            if (Convert.ToString(fridge) == "on")
+                selectedequipment += string.Format("<b>{0}</b>,", "Fridge");
+            if (Convert.ToString(stove) == "on")
+                selectedequipment += string.Format("<b>{0}</b>,", "Stove");
+            if (Convert.ToString(oven) == "on")
+                selectedequipment += string.Format("<b>{0}</b>,", "Oven");
+            if (Convert.ToString(treadmill) == "on")
+                selectedequipment += string.Format("<b>{0}</b>,", "Tread Mill");
+            if (Convert.ToString(elliptical) == "on")
+                selectedequipment += string.Format("<b>{0}</b>,", "Elliptical");
+            if (Convert.ToString(exercisebik) == "on")
+                selectedequipment += string.Format("<b>{0}</b>,", "Exercise Bike");
+            if (Convert.ToString(multigym) == "on")
+                selectedequipment += string.Format("<b>{0}</b>,", "MultiGym");
+            if (Convert.ToString(rower) == "on")
+                selectedequipment += string.Format("<b>{0}</b>,", "Rower");
+            if (Convert.ToString(equipment) == "on")
+                selectedequipment += string.Format("<b>{0}</b>,", "Equipment");
+
+
+            Message = string.Format("<b>Name:</b> {0}<br /><br />",txtName);
+            Message += string.Format("<b>Mobile:</b> {0}<br /><br />",txtmobile);
+            Message += string.Format("<b>Email:</b> {0}<br /><br />",txtemail);
+            Message += string.Format("<b>Time:</b> {0}<br /><br />",txttime);
+            Message += string.Format("<b>Date:</b> {0}<br /><br />",txtdate);
+            Message += string.Format("<b>Location:</b> {0}<br /><br />",txtlocation);
+            Message += string.Format("<b>Mobile No:</b> {0}<br /><br />",txtmobile);
+            Message += string.Format("<b>Complaints:</b> {0}<br /><br />",txtcomplaints);
+            Message += string.Format("<b>Selected Items:</b> {0}<br /><br />", selectedequipment);
+
+            MailMessage message = new MailMessage();
+            SmtpClient smtpClient = new SmtpClient();
+            string msg = string.Empty;
+            try
+            {
+                MailAddress fromAddress = new MailAddress("info@flexfixes.com");
+                message.From = fromAddress;
+                message.To.Add("info@flexfixes.com");
+                message.Subject = "Flex Fixes Booking Email from Website";
                 message.IsBodyHtml = true;
                 message.Body = Message;
                 smtpClient.Host = "relay-hosting.secureserver.net";   //-- Donot change.
