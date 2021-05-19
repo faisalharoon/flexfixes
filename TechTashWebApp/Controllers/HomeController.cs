@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Net.Mail;
 using System.Net;
+using EF.Data;
+using EF.Core;
 
 namespace TechTashWebApp.Controllers
 {
@@ -15,6 +17,17 @@ namespace TechTashWebApp.Controllers
         {
             return View();
         }
+
+        public ActionResult Rating()
+        {
+            return View();
+        }
+
+        public ActionResult ViewRating()
+        {
+            return View();
+        }
+
 
         public ActionResult Detail()
         {
@@ -142,7 +155,11 @@ namespace TechTashWebApp.Controllers
             return sendbookingemail();
         }
 
-
+        [HttpPost]
+        public string SendFeedback(string str)
+        {
+            return SaveFeedback();
+        }
 
         [HttpPost]
         public string SendEmail(string str)
@@ -251,6 +268,106 @@ namespace TechTashWebApp.Controllers
             {
                 msg = ex.Message;
             }
+            return msg;
+        }
+
+
+
+        public string SaveFeedback()
+        {
+
+            var Name = Convert.ToString(Request.Form["avia_1_1"]);
+            var ToEmail = Convert.ToString(Request.Form["avia_2_1"]);
+            var Message = Convert.ToString(Request.Form["avia_6_1"]);
+            var txtmobileno = Convert.ToString(Request.Form["txtmobileno"]);
+
+            var rating = Convert.ToString(Request.Form["rating"]);
+            string msg = string.Empty;
+
+            if (string.IsNullOrEmpty(rating))
+            {
+                msg = "Please select Rating.";
+                return msg;
+            }
+
+            if (string.IsNullOrEmpty(Name))
+            {
+                msg = "Please provide name.";
+                return msg;
+            }
+
+            if (string.IsNullOrEmpty(ToEmail))
+            {
+                msg = "Please porvide email.";
+                return msg;
+            }
+
+            if (string.IsNullOrEmpty(txtmobileno))
+            {
+                msg = "Please provide mobile no.";
+                return msg;
+            }
+
+
+            //Message = string.Format("<b>Name:</b> {0}<br /><br />", Name);
+            //Message += string.Format("<b>Email:</b> {0}<br /><br />", ToEmail);
+            //Message += string.Format("<b>Mobile:</b> {0}<br /><br />",  txtmobileno);
+            //Message += string.Format("<b>Message:</b> {0}<br /><br />", Message);
+            //Message += string.Format("<b>Rating:</b> {0}<br /><br />", rating);
+
+
+            //MailMessage message = new MailMessage();
+            //SmtpClient smtpClient = new SmtpClient();
+
+            //try
+            //{
+            //    MailAddress fromAddress = new MailAddress("info@flexfixes.com");
+            //    message.From = fromAddress;
+            //    message.To.Add("info@flexfixes.com");
+            //    message.Subject = "Flex Fixes Feedback from Website";
+            //    message.IsBodyHtml = true;
+            //    message.Body = Message;
+            //    smtpClient.Host = "relay-hosting.secureserver.net";   //-- Donot change.
+            //    smtpClient.Port = 25; //--- Donot change
+            //    smtpClient.EnableSsl = false;//--- Donot change
+            //    smtpClient.UseDefaultCredentials = true;
+            //    smtpClient.Credentials = new System.Net.NetworkCredential("info@flexfixes.com", "usman83213");
+
+            //    smtpClient.Send(message);
+            //    msg = "1";
+            //    //lblConfirmationMessage.Text = "Your email successfully sent.";
+            //}
+            //catch (Exception ex)
+            //{
+            //    msg = ex.Message;
+            //}
+
+
+            try
+            {
+                using (EFDbContext context = new EFDbContext())
+                {
+                    tblFeedback f = new tblFeedback();
+                    f.Message = Message;
+                    f.Name = Name;
+                    f.Email = ToEmail;
+                    f.MobileNo = txtmobileno;
+                    f.Rating = rating;
+                    f.CreationDate = DateTime.Now;
+                    //context.Entry(f).State = System.Data.EntityState.Added;
+                    context.Feedbacks.Add(f);
+                    context.SaveChanges();
+
+                    msg = "1";
+                }
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+
+
+
             return msg;
         }
 

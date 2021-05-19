@@ -258,6 +258,7 @@ C:\Code\flexfixes\TechTashWebApp\bin\roslyn\VBCSCompiler.exe.config
 C:\Code\flexfixes\TechTashWebApp\bin\TechTashWebApp.dll.config
 C:\Code\flexfixes\TechTashWebApp\bin\TechTashWebApp.dll
 C:\Code\flexfixes\TechTashWebApp\bin\TechTashWebApp.pdb
+C:\Code\flexfixes\TechTashWebApp\bin\EntityFramework.dll
 C:\Code\flexfixes\TechTashWebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Code\flexfixes\TechTashWebApp\bin\Microsoft.Web.Infrastructure.dll
 C:\Code\flexfixes\TechTashWebApp\bin\System.Web.Helpers.dll
@@ -266,6 +267,7 @@ C:\Code\flexfixes\TechTashWebApp\bin\System.Web.Razor.dll
 C:\Code\flexfixes\TechTashWebApp\bin\System.Web.Webpages.Deployment.dll
 C:\Code\flexfixes\TechTashWebApp\bin\System.Web.Webpages.dll
 C:\Code\flexfixes\TechTashWebApp\bin\System.Web.Webpages.Razor.dll
+C:\Code\flexfixes\TechTashWebApp\bin\EntityFramework.xml
 C:\Code\flexfixes\TechTashWebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Code\flexfixes\TechTashWebApp\bin\System.Web.Razor.xml
 C:\Code\flexfixes\TechTashWebApp\bin\System.Web.Webpages.xml
@@ -273,8 +275,9 @@ C:\Code\flexfixes\TechTashWebApp\bin\System.Web.Webpages.Deployment.xml
 C:\Code\flexfixes\TechTashWebApp\bin\System.Web.Webpages.Razor.xml
 C:\Code\flexfixes\TechTashWebApp\bin\System.Web.Helpers.xml
 C:\Code\flexfixes\TechTashWebApp\bin\System.Web.Mvc.xml
-C:\Code\flexfixes\TechTashWebApp\obj\Debug\TechTashWebApp.csprojAssemblyReference.cache
 C:\Code\flexfixes\TechTashWebApp\obj\Debug\TechTashWebApp.csproj.CoreCompileInputs.cache
 C:\Code\flexfixes\TechTashWebApp\obj\Debug\TechTashWebApp.csproj.CopyComplete
 C:\Code\flexfixes\TechTashWebApp\obj\Debug\TechTashWebApp.dll
 C:\Code\flexfixes\TechTashWebApp\obj\Debug\TechTashWebApp.pdb
+C:\Code\flexfixes\TechTashWebApp\obj\Debug\TechTashWebApp.Migrations.firstone.resources
+C:\Code\flexfixes\TechTashWebApp\obj\Debug\TechTashWebApp.csproj.GenerateResource.cache

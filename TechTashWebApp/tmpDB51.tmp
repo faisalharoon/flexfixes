@@ -37,6 +37,10 @@
         <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
         <bindingRedirect oldVersion="1.0.0.0-5.2.3.0" newVersion="5.2.3.0" />
       </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="EntityFramework" culture="neutral" publicKeyToken="b77a5c561934e089" />
+        <codeBase version="5.0.0.0" href="file:///C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/Extensions/Microsoft/Entity Framework Tools/Runtimes/5.0.0/EntityFramework.dll" />
+      </dependentAssembly>
     </assemblyBinding>
   </runtime>
   <system.codedom></system.codedom>

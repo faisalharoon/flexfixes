@@ -1,0 +1,44 @@
+﻿@using EF.Data;
+@{
+    ViewBag.Title = "Ratings - Flex Fixes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    EFDbContext context = new EFDbContext();
+    var q = context.Feedbacks.ToList().OrderByDescending(x => x.CreationDate);
+
+    var overallrating = Math.Round(q.Sum(x => Convert.ToDouble(x.Rating)) / q.Count(), 1);
+}
+
+@section MetaTitleTags
+{
+    <title>Ratings - Flex Fixes</title>
+    <meta name="description" content="AC Repair and maintenance services at your doorstep. We are mainly operating from UAE and its surrounding areas and just a call away.">
+    <meta name="keywords" content="air conditioner repair, ac repair, air cooler repair in uae">
+    <meta property="og:description" content="AC Repair and maintenance services at your doorstep. We are mainly operating from UAE and its surrounding areas and just a call away." />
+}
+
+<div id='after_full_slider_1' class='main_color av_default_container_wrap container_wrap fullsize'>
+    <div class='container'>
+        <div class='template-page content  av-content-full alpha units'>
+            <div class='post-entry post-entry-type-page post-entry-1281'>
+                <div class='entry-content-wrapper clearfix'>
+
+                    <div class="flex_column  flex_column_div av-zero-column-padding first  avia-builder-el-2  el_after_av_textblock column-top-margin" style='border-radius:0px; '>
+                        <section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                            <div class='avia_textblock ' itemprop="text">
+                                <div class="xts-our-mission" style="display:inline;">
+                                    <h2 style="float:left;">Customer Feedback Ratings</h2> <span style="float:left;padding-top:2%;">Overall Rating - @overallrating out of 5</span>
+                                    @Html.Partial("ViewRatingPartialView")
+
+
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+
+                </div>
+            </div>
+        </div><!-- close content main div --> <!-- section close by builder template -->
+    </div><!--end builder template-->
+</div><!-- close default .container_wrap element -->
