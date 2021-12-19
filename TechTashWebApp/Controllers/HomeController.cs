@@ -12,7 +12,22 @@ namespace TechTashWebApp.Controllers
 {
     public class HomeController : Controller
     {
+
+
         // GET: Home
+
+        public ActionResult Newpage()
+        {
+            TempData["Name"] = Request.QueryString["Name"];
+            return View();
+        }
+
+        public ActionResult book(string Name)
+        {
+            TempData["Name"] = Name;
+            return View();
+        }
+
         public ActionResult Home()
         {
             return View();
@@ -57,8 +72,10 @@ namespace TechTashWebApp.Controllers
         }
         public ActionResult servicearea()
         {
-            return View();
+            return RedirectToAction("home");
         }
+
+        
         public ActionResult mission ()
         {
             return View();
@@ -435,6 +452,53 @@ namespace TechTashWebApp.Controllers
             Message += string.Format("<b>Mobile No:</b> {0}<br /><br />",txtmobile);
             Message += string.Format("<b>Complaints:</b> {0}<br /><br />",txtcomplaints);
             Message += string.Format("<b>Selected Items:</b> {0}<br /><br />", selectedequipment);
+
+            MailMessage message = new MailMessage();
+            SmtpClient smtpClient = new SmtpClient();
+            string msg = string.Empty;
+            try
+            {
+                MailAddress fromAddress = new MailAddress("info@flexfixes.com");
+                message.From = fromAddress;
+                message.To.Add("info@flexfixes.com");
+                message.Subject = "Flex Fixes Booking Email from Website";
+                message.IsBodyHtml = true;
+                message.Body = Message;
+                smtpClient.Host = "relay-hosting.secureserver.net";   //-- Donot change.
+                smtpClient.Port = 25; //--- Donot change
+                smtpClient.EnableSsl = false;//--- Donot change
+                smtpClient.UseDefaultCredentials = true;
+                smtpClient.Credentials = new System.Net.NetworkCredential("info@flexfixes.com", "usman83213");
+
+                smtpClient.Send(message);
+                msg = "1";
+                //lblConfirmationMessage.Text = "Your email successfully sent.";
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+            return msg;
+        }
+
+
+
+        public string sendbookingemail2()
+        {
+            var Message = "";
+
+            var txtName = Convert.ToString(Request.Form["inputName"]);
+            var txtemail = Convert.ToString(Request.Form["inputEmail"]);
+            var txtnumber = Convert.ToString(Request.Form["inputNumber"]);
+
+            var queryType= Convert.ToString(Request.Form["inputType"]);
+
+
+            Message = string.Format("<b>Name:</b> {0}<br /><br />", txtName);
+            Message += string.Format("<b>Mobile:</b> {0}<br /><br />", txtnumber);
+            Message += string.Format("<b>Email:</b> {0}<br /><br />", txtemail);
+            Message += string.Format("<b>Query Type:</b> {0}<br /><br />", queryType);
+
 
             MailMessage message = new MailMessage();
             SmtpClient smtpClient = new SmtpClient();

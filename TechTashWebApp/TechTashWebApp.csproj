@@ -96,6 +96,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="fonts\fonts.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\about-bg.jpg" />
@@ -698,6 +699,8 @@
     <Content Include="Views\Home\RatingPartialView.cshtml" />
     <Content Include="Views\Home\ViewRatingPartialView.cshtml" />
     <Content Include="Views\Home\ViewRating.cshtml" />
+    <Content Include="Views\Home\Newpage.cshtml" />
+    <Content Include="Views\Home\book.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

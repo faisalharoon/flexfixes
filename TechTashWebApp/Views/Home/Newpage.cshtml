@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> AC</title>
+    <link rel="stylesheet" href="/Content/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script type='text/javascript' src='/wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <section class="herobg transbox">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="titleHeading">
+                        Do You Have<br />
+                        A Broken Washing<br /> machine Repair?<br />
+                        Book a repair or call us now<br />
+                        to get your appliance fixed
+                    </h2>
+                </div>
+                <div class="col-md-6 box1">
+                    <div class="formTitle">Book Your Service</div>
+                    <form id="frmbooking">
+                        <div class="form-row">
+                            <div class="form-group ">
+                                <label for="inputEmail4">Name</label>
+                                <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Name">
+                            </div>
+                            <div class="form-group ">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="Email">
+                            </div>
+                            <div class="form-group ">
+                                <label for="inputEmail4">Number</label>
+                                <input type="text" class="form-control" name="inputNumber" id="inputNumber" placeholder="Number">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="btnsendbookingemail">Sumbit</button>
+                        <input type="hidden" class="form-control" name="inputType" id="inputType" placeholder="Number" value='@Request.QueryString["Name"]'>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="clearBoth"></div>
+    <section class="secondsection">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="/Content/img/delivery.png" class="img-responsive center-block"><br>
+                    <div class="FreeText text-center">Free Pickup & Delivery</div>
+                </div>
+                <div class="col-md-3">
+                    <img src="/Content/img/fast.png" class="img-responsive center-block"><br>
+                    <div class="FreeText text-center">Fast Service</div>
+                </div>
+                <div class="col-md-3">
+                    <img src="/Content/img/guarantee.png" class="img-responsive center-block"><br />
+                    <div class="FreeText text-center">Best Price Guarantee</div>
+                </div>
+                <div class="col-md-3">
+                    <img src="/Content/img/warranty.png" class="img-responsive center-block"><br />
+                    <div class="FreeText text-center">Warranty On All Repairs</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="rajTitle">flexfixes Services LLC is one of the largest and fastest-growing full service appliances and AC Repair Service Company. With over 10 years of providing quality maintenance services across Dubai, our asset is our happy customer base. Our technicians are clean, friendly, English speaking, fully trained professionals and provide repair service you can rely on!</h3>
+                    <ul class="list-inline">
+                        <li>Huge stock of in-house Genuine Parts |</li>
+                        <li>Same Day Repair Service |</li>
+                        <li>Lowest Prices on Parts |</li>
+                        <li>Easy Access from Al Qouz |</li>
+                        <li>Tax invoice with Reliable warranty |</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+
+       
+        jQuery('#btnsendbookingemail').click(function () {
+            if (jQuery('#inputName').val() != '' && jQuery('#inputEmail').val() != '' && jQuery('#inputNumber').val() != '')
+            saveContactus2();
+            else
+            alert('please fill all fields and try again.');
+        });
+
+        function saveContactus2() {
+            var str = jQuery('#frmbooking').serialize();
+            //alert(str);
+
+            jQuery.ajax({
+                type: "POST",
+                url: "/Home/sendbookingemail2",
+                //data: {'str':str},
+                data: str,
+                success: function (msg) {
+                    //alert(msg);
+                    if (msg == '1') {
+                        alert('Query sent successfully');
+                    } else {
+                        alert(msg);
+                    }
+
+                }
+            });
+        }
+    </script>
+
+
+</body>
+</html>

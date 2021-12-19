@@ -1,0 +1,104 @@
+.herobg{
+  background-image: linear-gradient(0deg, rgba(211, 239, 248, 0.3), rgba(231, 231, 231, 0.3)), url("srvices.jpg");
+  height: 500px; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: center top;
+  width: 100%;
+  padding-bottom: 40px;
+    padding-top: 110px;
+
+}
+.transbox1 {
+ background-color: #0D0D0D;
+ opacity: 0.6;
+   
+}
+.box1{
+	 background-color: #5DBCDB;
+	 padding: 20px;
+	 border-radius: 20px;
+
+}
+.titleHeading{
+	color: #000;
+	font-weight: 400;
+	line-height: 40px;
+}
+.formTitle{
+	    font-size: 40px;
+    text-align: center;
+    color: #000;
+    font-weight: 700;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #1F1D1D  !important;
+    border-color: #1F1D1D !important;
+    width: 100%;
+}
+.secondsection{
+background: #F1F1F1;
+padding-top: 30px;
+padding-bottom: 30px;
+}
+.rajTitle{
+	ccolor: #000;
+    padding-top: 20px;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 31px;
+}
+.FreeText{
+	color: #000;
+	font-size: 24px;
+}
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+    margin-left: -5px;
+    font-size: 25px;
+}
+.clearBoth{
+  clear: both;
+}
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+.secondsection{
+background: #F1F1F1;
+padding-top: 30px;
+padding-bottom: 30px;
+margin-top: 300px;
+}
+.titleHeading{
+  text-align:center;
+}
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+    margin-left: -5px;
+    text-align: center;
+    font-size: 16px;
+}
+.FreeText{
+  margin-bottom: 20px;
+}
+..rajTitle {
+    ccolor: #000;
+    padding-top: 20px;
+    text-align: justify;
+    font-size: 17px;
+    line-height: 31px;
+}
+.formTitle {
+    font-size: 22px;
+    text-align: center;
+    color: #000;
+    font-weight: 700;
+}
+.box1{
+  margin: 20px;
+}
+}
